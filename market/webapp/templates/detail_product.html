@@ -11,8 +11,8 @@
         <p>added: {{product.created_at}}</p>
     </div>
     <div class="detail-prod-links">
-        <a href="/products/{{product.id}}/edit">Edit</a>
-        <a href="/products/{{product.id}}/delete">Delete</a>
+        <a href="{% url 'product_update' product.pk %}">Edit</a>
+        <a href="{% url 'product_delete' product.pk %}">Delete</a>
     </div>
     </div>
     </div>

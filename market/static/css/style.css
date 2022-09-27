@@ -1,0 +1,65 @@
+
+.container{
+    margin: auto;
+    width: 1080px;
+    position: relative;
+}
+body{
+    background: lightgrey;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+}
+.navbar{
+    margin-bottom: 30px;
+}
+.menu{
+    position: absolute;
+    right: 15px;
+}
+.form-box{
+    border-radius: 2%;
+}
+.form-box, .product-box{
+    padding-top: 10px;
+    box-sizing: border-box;
+    margin: auto;
+    text-align: center;
+    min-height: 500px;
+    background: white;
+}
+.product-box{
+    max-width: 800px;
+}
+.detail-product-img{
+    height: 300px;
+    width: 300px;
+    margin-top: 50px;
+}
+.prod-desc, .detail-product-img{
+    display: inline-block;
+}
+input, select{
+    margin: 10px;
+    width: 150px;
+    border-radius: 5px;
+}
+a{
+    text-decoration: none;
+    margin: 5px;
+}
+label{
+    width: 100px;
+}
+h1{
+    margin: 30px;
+    text-align: center;
+}
+.card-img{
+    margin-top: 20px;
+    margin-left: 30px;
+    height: 110px;
+    width: 110px;
+    border: 2px solid lightgrey;
+}
+.detail-prod-links{
+    margin-top: 50px;
+}
