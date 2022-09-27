@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+    
+    {% block content%}
+        <h1>Add product</h1>
+    <div class="form-box">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <p>Наименование</p>
+            <input type="text"  name="name"><br>
+            <p>Изображение</p>
+            <input type="text"  name="image"><br>
+            <p>Выберите категорию</p>
+            <select name="category" >
+                {% for category in categories %}
+                    <option value="{{category.name}}">{{category.name}}</option>
+                {% endfor %}
+            </select><br>
+            <p>Цена</p>
+            <input type="number"  name="price"><br>
+            <p>Описание</p>
+            <textarea name="description"></textarea>
+            <br>
+            <input type="submit" value="Создать">
+        </form>
+    </div>
+    {% endblock %}
+
+
