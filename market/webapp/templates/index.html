@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+
+{% block content %}
+          <div class="card-group">
+            {% for product in products %}
+                <div class="card mb-3 card-custom" style="min-width: 32%; max-width: 32%; margin: 5px">
+                  <div class="row g-0">
+                    <div class="col-md-6 card-img">
+                      <img src="{{product.image}}" class="img-fluid rounded-start" alt="img">
+                    </div>
+                    <div class="col-md-6">
+                      <div class="card-body">
+                        <h5 class="card-title">{{product.name}}</h5>
+                        <h5>{{product.category}}</h5>
+                        <p class="card-text">{{product.price}}</p>
+                        <p><a href="{% url 'product_detail' product.pk %}" class="card-link">See more>>></a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          {% endfor %}
+{% endblock %}
