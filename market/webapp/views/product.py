@@ -1,4 +1,4 @@
-from django.urls import reverse
+
 from django.shortcuts import render, redirect, get_object_or_404
 from webapp.models import Product, Category
 
@@ -20,3 +20,7 @@ def product_add_view(request):
     product = Product.objects.create(**product_data)
     return redirect("/")
 
+
+def product_view(request,pk):
+    product = get_object_or_404(Product, pk=pk)
+    return render(request, 'detail_product.html', context={'product': product})
