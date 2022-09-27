@@ -24,3 +24,21 @@ def product_add_view(request):
 def product_view(request,pk):
     product = get_object_or_404(Product, pk=pk)
     return render(request, 'detail_product.html', context={'product': product})
+
+def product_delete(request,pk):
+    product = get_object_or_404(Product, pk=pk)
+    product.delete()
+    return redirect('/')
+
+def product_update_view(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    if request.method == 'GET':
+        return render(request, 'product_edit.html', context={'product': product,'categories' : Category.objects.all()})
+    else:
+        product.name = request.POST.get('name')
+        product.image = request.POST.get('image')
+        product.price = request.POST.get('price')
+        product.description = request.POST.get('description')
+        product.category = Category.objects.get(name=request.POST.get('category'))
+        product.save()
+        return redirect('product_detail',pk=product.pk)
