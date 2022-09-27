@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+    
+    {% block content%}
+        <h1>Add Category</h1>
+    <div class="form-box">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <p>Наименование</p>
+            <input type="text"  name="name"><br>
+            <p>Описание</p>
+            <textarea name="description" cols="30" rows="10"></textarea>
+            <br>
+            <input type="submit" value="Создать">
+        </form>
+    </div>
+ {% endblock %}
